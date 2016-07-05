@@ -11,18 +11,6 @@ import cn.leancloud.EngineFunctionParam;
 
 public class TodoFunctions {
 
-  @EngineFunction("save")
-  public static AVObject saveNote(@EngineFunctionParam("content") String content) throws Exception {
-    if (AVUtils.isBlankString(content)) {
-      throw new Exception("can't create empty");
-    } else {
-      Note object = new Note();
-      object.put("content", content);
-      object.save();
-      return object;
-    }
-  }
-
   @EngineFunction("list")
   public static List<AVObject> getNotes(@EngineFunctionParam("offset") int offset) throws Exception {
     AVQuery<AVObject> query = new AVQuery("Note");

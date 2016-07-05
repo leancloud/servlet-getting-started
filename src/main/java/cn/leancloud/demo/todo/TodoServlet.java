@@ -34,7 +34,7 @@ public class TodoServlet extends HttpServlet {
     super.init();
     // 注册子类化
     AVObject.registerSubclass(Note.class);
-    // 初始化AVOSCloud
+    // 初始化AVOSCloud，请保证在整个项目中间只初始化一次
     AVOSCloud.initialize("H7KfzUELCqSPuWoABh1x9017-gzGzoHsz", "M8Fz60Rvmwir438zsu1Dg2WJ",
         "b4Rb7tfCpa2w4zinCfPwRuu1");
     // 在请求签名中使用masterKey以激活云代码的最高权限
@@ -90,10 +90,10 @@ public class TodoServlet extends HttpServlet {
       IOException {
     String content = req.getParameter("content");
 
-    Map<String, Object> params = new HashMap<String, Object>();
-    params.put("content", content);
     try {
-      AVCloud.rpcFunction("save", params);
+      AVObject note = new Note();
+      note.put("content", content);
+      note.save();
     } catch (AVException e) {
       e.printStackTrace();
     }
