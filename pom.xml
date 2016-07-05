@@ -5,7 +5,7 @@
 	<groupId>cn.leancloud.demo</groupId>
 	<artifactId>leanengine-java-todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>leanengine-java-todo</name>
 	<url>http://maven.apache.org</url>
@@ -39,14 +39,10 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>${jettyVersion}</version>
-		</dependency>
-		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
