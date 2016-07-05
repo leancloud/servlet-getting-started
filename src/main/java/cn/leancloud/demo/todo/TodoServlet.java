@@ -3,6 +3,7 @@ package cn.leancloud.demo.todo;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ import com.avos.avoscloud.AVUtils;
 import com.avos.avoscloud.PaasClient;
 import com.avos.avoscloud.internal.impl.EngineRequestSign;
 
-@WebServlet(name = "AppServlet", urlPatterns = {"/todo"}, loadOnStartup = 1)
+@WebServlet(name = "AppServlet", urlPatterns = {"/todos"}, loadOnStartup = 1)
 public class TodoServlet extends HttpServlet {
 
   @Override
@@ -76,35 +77,26 @@ public class TodoServlet extends HttpServlet {
     params.put("offset", offset);
     try {
       List<Note> data = AVCloud.rpcFunction("list", params);
-      resp.getWriter().write(data.toString());
-      resp.setCharacterEncoding("utf-8");
+      req.setAttribute("todos", data);
+
     } catch (AVException e) {
-      JSONObject error = new JSONObject();
-      error.put("code", e.getCode());
-      error.put("error", e.getMessage());
-      resp.getWriter().write(error.toJSONString());
       e.printStackTrace();
     }
+    req.getRequestDispatcher("/todos.jsp").forward(req, resp);
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
       IOException {
     String content = req.getParameter("content");
-    System.out.println(content);
+
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("content", content);
     try {
-      Note note = AVCloud.rpcFunction("save", params);
-      resp.getWriter().write(note.toString());
-      resp.setCharacterEncoding("utf-8");
+      AVCloud.rpcFunction("save", params);
     } catch (AVException e) {
-      JSONObject error = new JSONObject();
-      error.put("code", e.getCode());
-      error.put("error", e.getMessage());
-      resp.getWriter().write(error.toJSONString());
       e.printStackTrace();
     }
-
+    resp.sendRedirect("/todos");
   }
 }

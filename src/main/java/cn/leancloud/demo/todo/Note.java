@@ -9,6 +9,10 @@ import com.avos.avoscloud.AVObject;
 
 @AVClassName("Note")
 public class Note extends AVObject {
+  
+  public String getContent(){
+    return getString("content");
+  }    
 
   @Override
   public String toString() {
