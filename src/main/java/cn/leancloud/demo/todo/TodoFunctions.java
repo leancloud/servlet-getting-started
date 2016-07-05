@@ -12,13 +12,14 @@ import cn.leancloud.EngineFunctionParam;
 public class TodoFunctions {
 
   @EngineFunction("save")
-  public static void saveNote(@EngineFunctionParam("content") String content) throws Exception {
+  public static AVObject saveNote(@EngineFunctionParam("content") String content) throws Exception {
     if (AVUtils.isBlankString(content)) {
       throw new Exception("can't create empty");
     } else {
       Note object = new Note();
       object.put("content", content);
       object.save();
+      return object;
     }
   }
 
@@ -29,7 +30,6 @@ public class TodoFunctions {
     query.include("createdAt");
     query.skip(offset);
     List<AVObject> result = query.find();
-    System.out.println(result.get(0).getCreatedAt());
     return result;
   }
 }

@@ -76,7 +76,8 @@ public class TodoServlet extends HttpServlet {
     params.put("offset", offset);
     try {
       List<Note> data = AVCloud.rpcFunction("list", params);
-      System.out.println(data);
+      resp.getWriter().write(data.toString());
+      resp.setCharacterEncoding("utf-8");
     } catch (AVException e) {
       JSONObject error = new JSONObject();
       error.put("code", e.getCode());
@@ -89,6 +90,21 @@ public class TodoServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
       IOException {
-    super.doPost(req, resp);
+    String content = req.getParameter("content");
+    System.out.println(content);
+    Map<String, Object> params = new HashMap<String, Object>();
+    params.put("content", content);
+    try {
+      Note note = AVCloud.rpcFunction("save", params);
+      resp.getWriter().write(note.toString());
+      resp.setCharacterEncoding("utf-8");
+    } catch (AVException e) {
+      JSONObject error = new JSONObject();
+      error.put("code", e.getCode());
+      error.put("error", e.getMessage());
+      resp.getWriter().write(error.toJSONString());
+      e.printStackTrace();
+    }
+
   }
 }
