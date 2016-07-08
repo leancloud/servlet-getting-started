@@ -19,12 +19,13 @@
 <span>
 <table>
 <thead>
-        <tr>
-                <td><h3>content</h3></td>
-                <td><h3>objectId</h3></td>
-                <td><h3>createdAt</h3></td>
-        </tr>
+    <tr>
+        <td><h3>content</h3></td>
+        <td><h3>objectId</h3></td>
+        <td><h3>createdAt</h3></td>
+    </tr>
 </thead>
+<tbody>
 <c:forEach items="${todos}" var="todo">
     <tr>      
         <td>${todo.content}</td>
@@ -32,6 +33,7 @@
         <td>${todo.createdAt}</td>
     </tr>    
 </c:forEach>
+</tbody>
 </table>
 </span>
 </body>
