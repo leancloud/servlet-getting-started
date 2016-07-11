@@ -7,12 +7,12 @@ import com.alibaba.fastjson.JSON;
 import com.avos.avoscloud.AVClassName;
 import com.avos.avoscloud.AVObject;
 
-@AVClassName("Note")
-public class Note extends AVObject {
-  
-  public String getContent(){
+@AVClassName("Todo")
+public class Todo extends AVObject {
+
+  public String getContent() {
     return getString("content");
-  }    
+  }
 
   @Override
   public String toString() {
