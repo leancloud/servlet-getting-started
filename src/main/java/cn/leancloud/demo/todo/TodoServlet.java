@@ -13,16 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.avos.avoscloud.AVCloud;
 import com.avos.avoscloud.AVException;
-
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVUtils;
 
-@WebServlet(name = "AppServlet", urlPatterns = {"/todos"}, loadOnStartup = 1)
+@WebServlet(name = "AppServlet", urlPatterns = {"/todos"})
 public class TodoServlet extends HttpServlet {
 
+  private static final long serialVersionUID = -225836733891271748L;
+
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
-      IOException {
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+      throws ServletException, IOException {
     String offsetParam = req.getParameter("offset");
     int offset = 0;
     if (!AVUtils.isBlankString(offsetParam)) {
@@ -31,7 +32,7 @@ public class TodoServlet extends HttpServlet {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("offset", offset);
     try {
-      List<Note> data = AVCloud.rpcFunction("list", params);
+      List<Todo> data = AVCloud.rpcFunction("list", params);
       req.setAttribute("todos", data);
 
     } catch (AVException e) {
@@ -41,12 +42,12 @@ public class TodoServlet extends HttpServlet {
   }
 
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
-      IOException {
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+      throws ServletException, IOException {
     String content = req.getParameter("content");
 
     try {
-      AVObject note = new Note();
+      AVObject note = new Todo();
       note.put("content", content);
       note.save();
     } catch (AVException e) {

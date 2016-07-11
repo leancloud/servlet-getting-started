@@ -3,12 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.leancloud.demo</groupId>
-	<artifactId>leanengine-java-todo</artifactId>
+	<artifactId>java-war-getting-started</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>leanengine-java-todo</name>
-	<url>http://maven.apache.org</url>
+	<name>java-war-getting-started</name>
 
 	<repositories>
 		<repository>

@@ -15,8 +15,8 @@ public class TimeServlet extends HttpServlet {
   private static final long serialVersionUID = 110533133254086356L;
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
-      IOException {
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+      throws ServletException, IOException {
     req.setAttribute("currentTime", new Date());
     req.getRequestDispatcher("/time.jsp").forward(req, resp);
   }
