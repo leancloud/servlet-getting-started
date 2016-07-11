@@ -32,7 +32,7 @@ public class TodoServlet extends HttpServlet {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("offset", offset);
     try {
-      List<Note> data = AVCloud.rpcFunction("list", params);
+      List<Todo> data = AVCloud.rpcFunction("list", params);
       req.setAttribute("todos", data);
 
     } catch (AVException e) {
@@ -47,7 +47,7 @@ public class TodoServlet extends HttpServlet {
     String content = req.getParameter("content");
 
     try {
-      AVObject note = new Note();
+      AVObject note = new Todo();
       note.put("content", content);
       note.save();
     } catch (AVException e) {
