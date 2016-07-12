@@ -11,7 +11,7 @@ import com.avos.avoscloud.internal.impl.EngineRequestSign;
 import cn.leancloud.LeanEngine;
 
 @WebListener
-public class TodoInitListener implements ServletContextListener {
+public class AppInitListener implements ServletContextListener {
 
   private String appId = System.getenv("LEANCLOUD_APP_ID");
   private String appKey = System.getenv("LEANCLOUD_APP_KEY");
