@@ -4,14 +4,14 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import cn.leancloud.LeanEngine;
-
 import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.internal.impl.EngineRequestSign;
 
+import cn.leancloud.LeanEngine;
+
 @WebListener
-public class TodoInitListener implements ServletContextListener {
+public class AppInitListener implements ServletContextListener {
 
   private String appId = System.getenv("LEANCLOUD_APP_ID");
   private String appKey = System.getenv("LEANCLOUD_APP_KEY");
