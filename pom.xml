@@ -13,7 +13,7 @@
 		<repository>
 			<id>leancloud</id>
 			<name>LeanCloud</name>
-			<url>http://mvn.leancloud.cn/nexus/content/repositories/snapshots</url>
+			<url>http://mvn.leancloud.cn/nexus/content/repositories/release</url>
 			<snapshots>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -36,7 +36,7 @@
 		<dependency>
 			<groupId>cn.leancloud</groupId>
 			<artifactId>leanengine</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -82,7 +82,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
