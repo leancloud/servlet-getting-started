@@ -28,8 +28,8 @@ public class AppInitListener implements ServletContextListener {
     AVOSCloud.initialize(appId, appKey, appMasterKey);
     // 在请求签名中使用masterKey以激活云代码的最高权限
     EngineRequestSign.instance().setUserMasterKey(true);
-    // 打开日志
-    AVOSCloud.setDebugLogEnabled(true);
+    // 打开 debug 日志
+    // AVOSCloud.setDebugLogEnabled(true);
     // 向云引擎注册云函数
     LeanEngine.register(Cloud.class);
     if (System.getenv("LEANCLOUD_APP_ENV").equals("development")) {
