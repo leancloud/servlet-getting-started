@@ -2,4 +2,7 @@
 .settings
 .classpath
 target
+
+# LeanCloud
 .avoscloud
+.leancloud

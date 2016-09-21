@@ -13,7 +13,7 @@
 		<repository>
 			<id>leancloud</id>
 			<name>LeanCloud</name>
-			<url>http://mvn.leancloud.cn/nexus/content/repositories/releases</url>
+			<url>http://mvn.leancloud.cn/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
 
