@@ -9,14 +9,6 @@
 
 	<name>java-war-getting-started</name>
 
-	<repositories>
-		<repository>
-			<id>leancloud</id>
-			<name>LeanCloud</name>
-			<url>http://mvn.leancloud.cn/nexus/content/groups/public/</url>
-		</repository>
-	</repositories>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jettyVersion>9.3.10.v20160621</jettyVersion>
@@ -26,7 +18,7 @@
 		<dependency>
 			<groupId>cn.leancloud</groupId>
 			<artifactId>leanengine</artifactId>
-		<version>[0.1.6,0.2.0)</version>
+			<version>0.1.10</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
