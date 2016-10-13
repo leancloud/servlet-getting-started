@@ -46,7 +46,7 @@
 					<stopKey>foo</stopKey>
 					<stopPort>9999</stopPort>
 					<httpConnector>
-						<port>3000</port>
+						<port>${env.LEANCLOUD_APP_PORT}</port>
 					</httpConnector>
 				</configuration>
 				<executions>
