@@ -21,16 +21,17 @@ $ cd java-war-getting-started
 mvn package
 ```
 
-登录账户
+登录账户：
 ```
 lean login
 ```
 
-关联项目
+关联项目：
 ```
 lean checkout
 ```
 根据列表提示，输入数字，依次按回车关联到你的应用。
+
 
 启动项目：
 
