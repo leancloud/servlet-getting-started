@@ -21,13 +21,16 @@ $ cd java-war-getting-started
 mvn package
 ```
 
-关联应用：
-
+登录账户
 ```
-lean app add origin <appId>
+lean login
 ```
 
-这里的 appId 填上你在 LeanCloud 上创建的某一应用的 appId 即可。origin 则有点像 Git 里的 remote 名称。
+关联项目
+```
+lean checkout
+```
+根据列表提示，输入数字，依次按回车关联到你的应用。
 
 启动项目：
 
