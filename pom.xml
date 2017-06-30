@@ -38,7 +38,7 @@
 
 	<profiles>
 		<profile>
-			<id>lean-jetty</id>
+			<id>lean-up</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
