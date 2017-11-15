@@ -4,15 +4,15 @@
 
 	<groupId>cn.leancloud.demo</groupId>
 	<artifactId>java-war-getting-started</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>java-war-getting-started</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<jettyVersion>9.3.10.v20160621</jettyVersion>
 	</properties>
 
@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>cn.leancloud</groupId>
 			<artifactId>leanengine</artifactId>
-			<version>0.1.16</version>
+			<version>0.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
