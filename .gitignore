@@ -3,6 +3,9 @@
 .classpath
 target
 
+*.iml
+.idea/
+
 # LeanCloud
 .avoscloud
 .leancloud
