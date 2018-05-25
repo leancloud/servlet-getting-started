@@ -12,7 +12,6 @@ import cn.leancloud.AVCloud;
 import cn.leancloud.core.AVOSCloud;
 import cn.leancloud.core.RequestSignImplementation;
 import cn.leancloud.AVObject;
-import cn.leancloud.impl.DefaultAVUserCookieSign;
 
 import cn.leancloud.LeanEngine;
 
@@ -37,7 +36,7 @@ public class AppInitListener implements ServletContextListener {
     AVObject.registerSubclass(Todo.class);
 
     if ("development".equals(appEnv) && "true".equals(haveStaging) || "stage".equals(appEnv)) {
-      AVOSCloud.setProductionMode(false);
+      AVCloud.setProductionMode(false);
     }
     // 初始化AVOSCloud，请保证在整个项目中间只初始化一次
     LeanEngine.initialize(appId, appKey, appMasterKey);

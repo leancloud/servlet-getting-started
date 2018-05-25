@@ -68,7 +68,6 @@ public class TodoServlet extends HttpServlet {
 
       }
     });
-    req.getRequestDispatcher("/todos.jsp").forward(req, resp);
   }
 
   @Override
