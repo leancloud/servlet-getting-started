@@ -32,6 +32,8 @@ public class AppInitListener implements ServletContextListener {
   @Override
   public void contextInitialized(ServletContextEvent arg0) {
     logger.info("LeanEngine app init.");
+    // 打开 debug 日志
+    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
     // 注册子类化
     AVObject.registerSubclass(Todo.class);
 
@@ -43,8 +45,6 @@ public class AppInitListener implements ServletContextListener {
     // 在请求签名中使用masterKey以激活云代码的最高权限
 
     RequestSignImplementation.setMasterKey(appMasterKey);
-    // 打开 debug 日志
-    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
     // 向云引擎注册云函数
     LeanEngine.register(Cloud.class);
   }

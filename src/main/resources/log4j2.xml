@@ -6,10 +6,10 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="cn.leancloud.demo" level="INFO" additivity="false">
+		<Logger name="cn.leancloud" level="DEBUG" additivity="false">
 			<AppenderRef ref="Console" />
 		</Logger>
-		<Root level="WARN">
+		<Root level="INFO">
 			<AppenderRef ref="Console" />
 		</Root>
 	</Loggers>
