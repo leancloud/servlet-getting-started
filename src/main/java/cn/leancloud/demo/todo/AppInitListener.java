@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.avos.avoscloud.AVCloud;
-import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.internal.impl.JavaRequestSignImplementation;
 
@@ -42,7 +41,7 @@ public class AppInitListener implements ServletContextListener {
     // 在请求签名中使用masterKey以激活云代码的最高权限
     JavaRequestSignImplementation.instance().setUseMasterKey(true);
     // 打开 debug 日志
-    AVOSCloud.setDebugLogEnabled(false);
+    // AVOSCloud.setDebugLogEnabled(true);
     // 向云引擎注册云函数
     LeanEngine.register(Cloud.class);
   }
