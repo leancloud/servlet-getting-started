@@ -1,18 +1,14 @@
-# Java Getting started
+# Cloud Function Getting Started
 
-一个简单的使用 Servlet 的 Java 服务端应用，打成 war 包运行。
-可以运行在 LeanEngine Java 运行时环境。
-
-## 一键部署
-[![Deploy to LeanEngine](http://ac-32vx10b9.clouddn.com/109bd02ee9f5875a.png)](https://leancloud.cn/1.1/functions/_ops/deploy-button)
+运行在 [LeanCloud](https://leancloud.cn/) 云引擎 Java 环境上的云函数项目示例。
 
 ## 本地运行
 
 首先确认本机已经安装 [LeanCloud 命令行工具](https://www.leancloud.cn/docs/leanengine_cli.html)，然后执行下列指令：
 
 ```
-$ git clone https://github.com/leancloud/java-war-getting-started.git
-$ cd java-war-getting-started
+$ git clone -b cloud-function https://github.com/leancloud/java-war-getting-started.git cloud-function-getting-started
+$ cd cloud-function-getting-started
 ```
 
 安装依赖：
@@ -36,10 +32,21 @@ lean checkout
 启动项目：
 
 ```
-lean up
+$(lean up)
+java -jar target/cloud-function-getting-started-0.0.1-SNAPSHOT.jar
 ```
 
-应用即可启动运行：[localhost:3000](http://localhost:3000)
+项目启动后会监听本机 3000 端口。
+
+## 本机调试
+
+再启动一个终端，使用命令行工具启动云函数调试页面：
+
+```
+lean debug
+```
+
+即可打开 [localhost:3001](http://localhost:3001) 测试请求本机云函数和 Hook 函数。
 
 ## 部署到 LeanEngine
 

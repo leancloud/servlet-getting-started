@@ -1,9 +1,9 @@
-package cn.leancloud.demo.todo;
+package cn.leancloud.demo;
 
 import cn.leancloud.EngineFunction;
 import cn.leancloud.EngineFunctionParam;
 
-public class Cloud {
+public class CloudFunctions {
 
   @EngineFunction("hello")
   public static String hello(@EngineFunctionParam("name") String name) {

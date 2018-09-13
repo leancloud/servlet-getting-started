@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
-	<Appenders>
-		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="[%t] %-5level %logger{1} - %msg%n" />
-		</Console>
-	</Appenders>
-	<Loggers>
-		<Logger name="cn.leancloud.demo" level="debug" additivity="false">
-			<AppenderRef ref="Console" />
-		</Logger>
-		<Root level="INFO">
-			<AppenderRef ref="Console" />
-		</Root>
-	</Loggers>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%t] %-5level %logger{1} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="cn.leancloud.demo" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
 </Configuration>
