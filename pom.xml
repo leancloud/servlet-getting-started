@@ -19,8 +19,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>cn.leancloud</groupId>
-			<artifactId>leanengine</artifactId>
-			<version>5.0.0-snapshot</version>
+			<artifactId>engine-core</artifactId>
+			<version>5.0.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
