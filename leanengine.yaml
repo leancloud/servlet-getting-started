@@ -1,2 +1,2 @@
 javaVersion: '12'
-mavenCentral: 'http://maven.aliyun.com/nexus/content/groups/public'
+mavenCentral: 'http://repo.maven.apache.org/maven2'
