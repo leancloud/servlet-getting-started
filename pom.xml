@@ -4,7 +4,7 @@
 
 	<groupId>cn.leancloud.demo</groupId>
 	<artifactId>java-war-getting-started</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>java-war-getting-started</name>
@@ -19,8 +19,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>cn.leancloud</groupId>
-			<artifactId>leanengine</artifactId>
-			<version>0.2.5</version>
+			<artifactId>engine-core</artifactId>
+			<version>5.0.23</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>

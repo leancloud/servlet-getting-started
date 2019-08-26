@@ -6,7 +6,7 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="cn.leancloud.demo" level="debug" additivity="false">
+		<Logger name="cn.leancloud" level="DEBUG" additivity="false">
 			<AppenderRef ref="Console" />
 		</Logger>
 		<Root level="INFO">

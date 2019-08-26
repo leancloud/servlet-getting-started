@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
-import com.avos.avoscloud.AVClassName;
-import com.avos.avoscloud.AVObject;
+import cn.leancloud.annotation.AVClassName;
+import cn.leancloud.AVObject;
 
 @AVClassName("Todo")
 public class Todo extends AVObject {
