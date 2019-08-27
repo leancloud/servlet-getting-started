@@ -31,8 +31,8 @@ public class TodoServlet extends HttpServlet {
     }
     AVQuery<Todo> query = AVObject.getQuery(Todo.class);
     query.orderByDescending("createdAt");
-    query.include("createdAt");
     query.skip(offset);
+
     query.findInBackground().subscribe(new Observer<List<Todo>>() {
       @Override
       public void onSubscribe(Disposable disposable) {
@@ -59,7 +59,13 @@ public class TodoServlet extends HttpServlet {
             // 具体的错误代码详见：https://leancloud.cn/docs/error_code.html
             req.setAttribute("todos", new ArrayList<>());
           }
-          throw new RuntimeException(throwable);
+          req.setAttribute("todos", new ArrayList<>());
+          try {
+            req.getRequestDispatcher("/todos.jsp").forward(req, resp);
+          } catch (Exception ex) {
+            ex.printStackTrace();
+          }
+//          throw new RuntimeException(throwable);
         }
       }
 
