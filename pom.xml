@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>cn.leancloud</groupId>
 			<artifactId>engine-core</artifactId>
-			<version>5.0.23</version>
+			<version>6.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>

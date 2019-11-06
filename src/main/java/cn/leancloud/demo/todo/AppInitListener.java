@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import cn.leancloud.AVCloud;
 import cn.leancloud.core.AVOSCloud;
-import cn.leancloud.core.RequestSignImplementation;
+import cn.leancloud.core.GeneralRequestSignature;
 import cn.leancloud.AVObject;
 
 import cn.leancloud.LeanEngine;
@@ -44,7 +44,7 @@ public class AppInitListener implements ServletContextListener {
     LeanEngine.initialize(appId, appKey, appMasterKey);
     // 在请求签名中使用masterKey以激活云代码的最高权限
 
-    RequestSignImplementation.setMasterKey(appMasterKey);
+    GeneralRequestSignature.setMasterKey(appMasterKey);
     // 向云引擎注册云函数
     LeanEngine.register(Cloud.class);
   }
