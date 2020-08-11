@@ -9,6 +9,6 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-	<p>当前时间：${currentTime}</p>
+	<p>Current time: ${currentTime}</p>
 </body>
 </html>
