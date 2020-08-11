@@ -28,9 +28,8 @@ lean login
 
 关联项目：
 ```
-lean checkout
+lean switch
 ```
-根据列表提示，输入数字，依次按回车确认，以关联到你的应用。
 
 
 启动项目：
