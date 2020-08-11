@@ -23,6 +23,7 @@ public class AppInitListener implements ServletContextListener {
   private String appId = System.getenv("LEANCLOUD_APP_ID");
   private String appKey = System.getenv("LEANCLOUD_APP_KEY");
   private String appMasterKey = System.getenv("LEANCLOUD_APP_MASTER_KEY");
+  private String hookKey = System.getenv("LEANCLOUD_APP_HOOK_KEY");
   private String appEnv = System.getenv("LEANCLOUD_APP_ENV");
   private String haveStaging = System.getenv("LEAN_CLI_HAVE_STAGING");
 
@@ -41,7 +42,7 @@ public class AppInitListener implements ServletContextListener {
       AVCloud.setProductionMode(false);
     }
     // 初始化AVOSCloud，请保证在整个项目中间只初始化一次
-    LeanEngine.initialize(appId, appKey, appMasterKey);
+    LeanEngine.initialize(appId, appKey, appMasterKey, hookKey);
     // 在请求签名中使用masterKey以激活云代码的最高权限
 
     GeneralRequestSignature.setMasterKey(appMasterKey);
