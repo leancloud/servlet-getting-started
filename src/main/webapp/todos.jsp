@@ -10,10 +10,10 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
- <h1>TODO 列表</h1>
+ <h1>TODO list</h1>
  <form action="/todos" method="post">
    <input type="text" name="content"/>
-   <input type="submit" />
+   <input type="submit" value="New todo"/>
  </form>
 
 <span>
