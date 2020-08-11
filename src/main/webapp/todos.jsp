@@ -13,7 +13,7 @@
  <h1>TODO list</h1>
  <form action="/todos" method="post">
    <input type="text" name="content"/>
-   <input type="submit" />
+   <input type="submit" value="New todo"/>
  </form>
 
 <span>
