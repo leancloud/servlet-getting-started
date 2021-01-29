@@ -3,9 +3,9 @@ package cn.leancloud.demo.todo;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSON;
 import cn.leancloud.annotation.AVClassName;
 import cn.leancloud.AVObject;
+import cn.leancloud.json.JSON;
 
 @AVClassName("Todo")
 public class Todo extends AVObject {

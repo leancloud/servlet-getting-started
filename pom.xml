@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>cn.leancloud</groupId>
 			<artifactId>engine-core</artifactId>
-			<version>[6.5.8, 7.0)</version>
+			<version>[7.2.0, 8.0)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
