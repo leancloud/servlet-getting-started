@@ -1,6 +1,6 @@
 # Java Getting started
 
-A simple Java application, based on Servlet, packaged as a WAR file, for LeanEngine Python runtime.
+A simple Java application, based on Servlet, packaged as a WAR file, for LeanEngine Java runtime.
 
 ## Documentation
 
