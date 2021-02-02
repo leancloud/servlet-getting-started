@@ -4,16 +4,12 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import cn.leancloud.AVLogger;
+import cn.leancloud.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import cn.leancloud.AVCloud;
 import cn.leancloud.core.AVOSCloud;
 import cn.leancloud.core.GeneralRequestSignature;
-import cn.leancloud.AVObject;
-
-import cn.leancloud.LeanEngine;
 
 @WebListener
 public class AppInitListener implements ServletContextListener {
@@ -46,6 +42,10 @@ public class AppInitListener implements ServletContextListener {
     LeanEngine.initialize(appId, appKey, appMasterKey, hookKey);
     // Uses masterKey for the whole project.
     GeneralRequestSignature.setMasterKey(appMasterKey);
+
+    // If you don't need session cookie, you can comment following line.
+    LeanEngine.addSessionCookie(new EngineSessionCookie("my secret", 3600, false));
+
     // Registers cloud functions.
     LeanEngine.register(Cloud.class);
   }

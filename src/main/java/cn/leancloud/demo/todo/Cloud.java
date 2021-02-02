@@ -2,6 +2,7 @@ package cn.leancloud.demo.todo;
 
 import cn.leancloud.EngineFunction;
 import cn.leancloud.EngineFunctionParam;
+import cn.leancloud.EngineRequestContext;
 import cn.leancloud.sms.AVSMS;
 import cn.leancloud.sms.AVSMSOption;
 import cn.leancloud.types.AVNull;
@@ -16,6 +17,10 @@ public class Cloud {
     if (name == null) {
       return "What is your name?";
     }
+    // the following code just does demonstrate how to get authenticated user's sessionToken.
+    String authUserSessionToken = EngineRequestContext.getSessionToken();
+    System.out.println("authUserSessionToken: " + authUserSessionToken);
+
     return String.format("Hello %s!", name);
   }
 

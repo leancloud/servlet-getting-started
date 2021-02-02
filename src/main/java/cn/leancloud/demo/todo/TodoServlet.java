@@ -62,7 +62,6 @@ public class TodoServlet extends HttpServlet {
           } catch (Exception ex) {
             ex.printStackTrace();
           }
-//          throw new RuntimeException(throwable);
         }
       }
 
