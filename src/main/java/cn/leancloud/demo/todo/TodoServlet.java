@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.leancloud.AVException;
-import cn.leancloud.AVObject;
-import cn.leancloud.AVQuery;
+import cn.leancloud.LCException;
+import cn.leancloud.LCObject;
+import cn.leancloud.LCQuery;
 import cn.leancloud.utils.StringUtil;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -29,7 +29,7 @@ public class TodoServlet extends HttpServlet {
     if (!StringUtil.isEmpty(offsetParam)) {
       offset = Integer.parseInt(offsetParam);
     }
-    AVQuery<Todo> query = AVObject.getQuery(Todo.class);
+    LCQuery<Todo> query = LCObject.getQuery(Todo.class);
     query.orderByDescending("createdAt");
     query.skip(offset);
 
@@ -51,8 +51,8 @@ public class TodoServlet extends HttpServlet {
 
       @Override
       public void onError(Throwable throwable) {
-        if (throwable instanceof AVException) {
-          if (((AVException) throwable).getCode() == 101) {
+        if (throwable instanceof LCException) {
+          if (((LCException) throwable).getCode() == 101) {
             // Todo class does not exist in the cloud yet.
             req.setAttribute("todos", new ArrayList<>());
           }
@@ -76,7 +76,7 @@ public class TodoServlet extends HttpServlet {
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     String content = req.getParameter("content");
 
-    AVObject note = new Todo();
+    LCObject note = new Todo();
     note.put("content", content);
     note.save();
     resp.sendRedirect("/todos");

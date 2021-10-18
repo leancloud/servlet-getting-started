@@ -3,9 +3,9 @@ package cn.leancloud.demo.todo;
 import cn.leancloud.EngineFunction;
 import cn.leancloud.EngineFunctionParam;
 import cn.leancloud.EngineRequestContext;
-import cn.leancloud.sms.AVSMS;
-import cn.leancloud.sms.AVSMSOption;
-import cn.leancloud.types.AVNull;
+import cn.leancloud.sms.LCSMS;
+import cn.leancloud.sms.LCSMSOption;
+import cn.leancloud.types.LCNull;
 import cn.leancloud.utils.StringUtil;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -29,15 +29,15 @@ public class Cloud {
     if (StringUtil.isEmpty(mobile)) {
       return "What is your name?";
     }
-    AVSMSOption option = new AVSMSOption();
-    AVSMS.requestSMSCodeInBackground(mobile, option).subscribe(new Observer<AVNull>() {
+    LCSMSOption option = new LCSMSOption();
+    LCSMS.requestSMSCodeInBackground(mobile, option).subscribe(new Observer<LCNull>() {
       @Override
       public void onSubscribe(Disposable disposable) {
 
       }
 
       @Override
-      public void onNext(AVNull avNull) {
+      public void onNext(LCNull avNull) {
         ;
       }
 

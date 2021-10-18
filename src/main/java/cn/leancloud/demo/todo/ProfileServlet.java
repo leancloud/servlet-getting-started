@@ -1,6 +1,6 @@
 package cn.leancloud.demo.todo;
 
-import cn.leancloud.AVUser;
+import cn.leancloud.LCUser;
 import cn.leancloud.EngineRequestContext;
 
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ public class ProfileServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
           IOException {
     // get authenticated user from request cookie.
-    AVUser currentUser = EngineRequestContext.getAuthenticatedUser();
+    LCUser currentUser = EngineRequestContext.getAuthenticatedUser();
     if (null != currentUser) {
       req.setAttribute("currentUser", currentUser);
     } else {

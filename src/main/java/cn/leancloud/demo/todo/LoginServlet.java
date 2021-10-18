@@ -23,14 +23,14 @@ public class LoginServlet extends HttpServlet {
   protected void doPost(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
     String username = req.getParameter("username");
     String passwd = req.getParameter("password");
-    AVUser.logIn(username, passwd).subscribe(new Observer<AVUser>() {
+    LCUser.logIn(username, passwd).subscribe(new Observer<LCUser>() {
       @Override
       public void onSubscribe(Disposable disposable) {
 
       }
 
       @Override
-      public void onNext(AVUser avUser) {
+      public void onNext(LCUser avUser) {
         try {
           // save user info to cookie and local session.
           EngineRequestContext.setAuthenticatedUser(avUser);

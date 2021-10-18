@@ -3,12 +3,13 @@ package cn.leancloud.demo.todo;
 import java.util.HashMap;
 import java.util.Map;
 
-import cn.leancloud.annotation.AVClassName;
-import cn.leancloud.AVObject;
+
+import cn.leancloud.annotation.LCClassName;
+import cn.leancloud.LCObject;
 import cn.leancloud.json.JSON;
 
-@AVClassName("Todo")
-public class Todo extends AVObject {
+@LCClassName("Todo")
+public class Todo extends LCObject {
 
   public String getContent() {
     return getString("content");

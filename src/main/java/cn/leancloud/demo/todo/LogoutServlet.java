@@ -1,6 +1,6 @@
 package cn.leancloud.demo.todo;
 
-import cn.leancloud.AVUser;
+import cn.leancloud.LCUser;
 import cn.leancloud.EngineRequestContext;
 import cn.leancloud.EngineSessionCookie;
 import cn.leancloud.LeanEngine;
@@ -22,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
           IOException {
     // get authenticated user from request cookie.
-    AVUser user = EngineRequestContext.getAuthenticatedUser();
+    LCUser user = EngineRequestContext.getAuthenticatedUser();
     if (user != null) {
       user.logOut();
     }
