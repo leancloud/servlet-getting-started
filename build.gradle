@@ -1,0 +1,22 @@
+plugins {
+    id 'war'
+    id "org.gretty" version "4.0.3"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'cn.leancloud:engine-core:[8.2.1, 9.0)'
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.0'
+    implementation 'org.apache.logging.log4j:log4j-web:2.17.0'
+    testImplementation 'junit:junit:4.13.1'
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+group = 'cn.leancloud.demo'
+version = '1.0.0-SNAPSHOT'
+description = 'java-war-getting-started'
+java.sourceCompatibility = JavaVersion.VERSION_11
