@@ -19,4 +19,4 @@ dependencies {
 group = 'cn.leancloud.demo'
 version = '1.0.0-SNAPSHOT'
 description = 'java-war-getting-started'
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_17
